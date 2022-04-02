@@ -40,7 +40,7 @@
 	"peers": {
 		"peer0.org1.example.com": {
 			"tlsCACerts": {
-				"path": "/tmp/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
+				"path": "/tmp/crypto/peerOrganizations/org1.luther.systems/peers/peer0.org1.luther.systems/tls/ca.crt"
 			},
 			"url": "grpcs://peer0.org1.example.com:7051"
 		}
