@@ -19,7 +19,7 @@
 		}
 	},
 	"channels": {
-		"mychannel": {
+		"luther": {
 			"peers": {
 				"peer0.org1.luther.systems": {}
 			}
