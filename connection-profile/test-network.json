@@ -1,11 +1,11 @@
 {
-	"name": "test-network",
+	"name": "sandbox-test-network",
 	"version": "1.0.0",
 	"client": {
 		"tlsEnable": true,
 		"adminCredential": {
-			"id": "exploreradmin",
-			"password": "exploreradminpw"
+			"id": "admin",
+			"password": "adminpw"
 		},
 		"enableAuthentication": true,
 		"organization": "Org1MSP",
