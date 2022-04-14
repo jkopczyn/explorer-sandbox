@@ -7,15 +7,15 @@ volumes:
   walletstore:
 
 networks:
-  mynetwork.com:
+  luther.systems:
     name: fnb_byfn
 
 services:
 
-  explorerdb.mynetwork.com:
+  explorerdb.luther.systems:
     image: hyperledger/explorer-db:latest
-    container_name: explorerdb.mynetwork.com
-    hostname: explorerdb.mynetwork.com
+    container_name: explorerdb.luther.systems
+    hostname: explorerdb.luther.systems
     environment:
       - DATABASE_DATABASE=fabricexplorer
       - DATABASE_USERNAME=hppoc
@@ -28,14 +28,14 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     networks:
-      - mynetwork.com
+      - luther.systems
 
-  explorer.mynetwork.com:
+  explorer.luther.systems:
     image: hyperledger/explorer:latest
-    container_name: explorer.mynetwork.com
-    hostname: explorer.mynetwork.com
+    container_name: explorer.luther.systems
+    hostname: explorer.luther.systems
     environment:
-      - DATABASE_HOST=explorerdb.mynetwork.com
+      - DATABASE_HOST=explorerdb.luther.systems
       - DATABASE_DATABASE=fabricexplorer
       - DATABASE_USERNAME=hppoc
       - DATABASE_PASSWD=password
@@ -52,7 +52,7 @@ services:
     ports:
       - 10080:10080
     depends_on:
-      explorerdb.mynetwork.com:
+      explorerdb.luther.systems:
         condition: service_healthy
     networks:
-      - mynetwork.com
+      - luther.systems
