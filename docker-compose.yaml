@@ -31,7 +31,7 @@ services:
       - luther.systems
 
   explorer.luther.systems:
-    image: hyperledger/explorer:latest
+    image: hyperledger-explorer:latest
     container_name: explorer.luther.systems
     hostname: explorer.luther.systems
     environment:
@@ -44,13 +44,14 @@ services:
       - LOG_LEVEL_CONSOLE=debug
       - LOG_CONSOLE_STDOUT=true
       - DISCOVERY_AS_LOCALHOST=false
+      - PORT=8090
     volumes:
       - ./config.json:/opt/explorer/app/platform/fabric/config.json
       - ./connection-profile:/opt/explorer/app/platform/fabric/connection-profile
       - ./organizations/:/tmp/crypto/
       - walletstore:/opt/explorer/wallet
     ports:
-      - 10080:10080
+      - ${PORT}:${PORT}
     depends_on:
       explorerdb.luther.systems:
         condition: service_healthy
