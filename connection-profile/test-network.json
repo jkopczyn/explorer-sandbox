@@ -44,5 +44,25 @@
 			},
 			"url": "grpcs://peer0.org1.luther.systems:7051"
 		}
+	},
+	"certificateAuthorities": {
+		"ca_peerOrg1": {
+			"url": "https://localhost:7054",
+			"httpOptions": {
+				"verify": false
+			},
+			"tlsCACerts": {
+				"path": "/tmp/fabric/crypto-config/peerOrganizations/org1.luther.systems/ca/ca.org1.luther.systems-cert.pem",
+				"client": {
+					"key": {
+						"path": "/tmp/fabric/crypto-config/peerOrganizations/org1.luther.systems/users/Admin@org1.luther.systems/tls/client.key"
+					},
+					"cert": {
+						"path": "/tmp/fabric/crypto-config/peerOrganizations/org1.luther.systems/users/Admin@org1.luther.systems/tls/client.crt"
+					}
+				}
+			},
+			"caName": "ca.org1.luther.systems"
+		}
 	}
 }
